@@ -1,0 +1,80 @@
+[
+    {
+        "image": "https://i.ibb.co/z8jS435/Warehouses1-png.jpg",
+        "estate_title": "Modern Industrial Warehouse",
+        "id": 1,
+        "segment_name": "Warehouse",
+        "description": "A spacious and modern warehouse suitable for various industrial uses.",
+        "price": "$500,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "123 Industrial Road, Cityville",
+        "facilities": ["loading dock", "office space", "security system"],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "https://i.ibb.co/85Q1gNq/manufacturing2-png.jpg",
+        "estate_title": "High-Tech Manufacturing Plant",
+        "id": 2,
+        "segment_name": "Manufacturing",
+        "description": "A state-of-the-art manufacturing plant equipped with the latest technology.",
+        "price": "$1,200,000",
+        "status": "sale",
+        "area": "10000 sq ft",
+        "location": "456 Factory Lane, Industriatown",
+        "facilities": ["assembly line", "quality control room", "cafeteria"],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "https://i.ibb.co/d0Dmk56/logistics3-png.jpg",
+        "estate_title": "Distribution Center",
+        "id": 3,
+        "segment_name": "Logistics",
+        "description": "A strategically located distribution center ideal for logistics and warehousing.",
+        "price": "$750,000",
+        "status": "rent",
+        "area": "8000 sq ft",
+        "location": "789 Logistics Blvd, Transport City",
+        "facilities": ["loading bays", "office space", "parking lot"],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "https://i.ibb.co/ZxMqspm/chemicales4-png.jpg",
+        "estate_title": "Chemical Processing Facility",
+        "id": 4,
+        "segment_name": "Chemical",
+        "description": "A specialized facility designed for chemical processing and manufacturing.",
+        "price": "$2,000,000",
+        "status": "sale",
+        "area": "15000 sq ft",
+        "location": "321 Chemical Street, Labtown",
+        "facilities": ["processing units", "storage tanks", "safety systems"],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "https://i.ibb.co/mT4JFVQ/textile5-png.jpg",
+        "estate_title": "Textile Production Unit",
+        "id": 5,
+        "segment_name": "Textile",
+        "description": "A fully equipped textile production unit with modern machinery.",
+        "price": "$900,000",
+        "status": "rent",
+        "area": "7000 sq ft",
+        "location": "654 Fabric Avenue, Weavetown",
+        "facilities": ["weaving machines", "dyeing units", "storage"],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "https://i.ibb.co/3y02kZG/food-Procceing6-png.jpg",
+        "estate_title": "Food Processing Plant",
+        "id": 6,
+        "segment_name": "Food Processing",
+        "description": "A hygienic and well-maintained food processing plant with advanced facilities.",
+        "price": "$1,500,000",
+        "status": "sale",
+        "area": "12000 sq ft",
+        "location": "987 Food Park, Eateryville",
+        "facilities": ["production line", "cold storage", "quality control lab"],
+        "view_property_button": "View Property"
+    }
+]

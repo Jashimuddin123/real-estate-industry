@@ -1,0 +1,38 @@
+[
+    {
+        "id": "0",
+        "name": "All News"
+    },
+    {
+        "id": "1",
+        "name": "Warehouses"
+    },
+    {
+        "id": "2",
+        "name": "Factories"
+    },
+    {
+        "id": "3",
+        "name": " Production plants"
+    },
+    {
+        "id": "4",
+        "name": "Industrial Parks"
+    },
+    {
+        "id": "5",
+        "name": "Cold Storage facilities"
+    },
+    {
+        "id": "6",
+        "name": "Transformation Terminals"
+    },
+    {
+        "id": "7",
+        "name": "convention centers"
+    },
+    {
+        "id": "7",
+        "name": "art galleries"
+    }
+]
