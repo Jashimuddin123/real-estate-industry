@@ -12,10 +12,12 @@ const LeftSideNav = () => {
     },[])
     return (
         <div>
-            <h1 className="text-3xl font-bold ml-4 underline">All Categories{category.length}</h1>
-            {
-                category.map(category=> <Link className="block ml-4 text-xl font-semibold " key={category.id}> {category.name} </Link>)
+            <h1 className="text-3xl font-bold ml-4 underline text-center">All Categories{category.length}</h1>
+               <div className=" text-start">
+               {
+                category.map(category=> <Link className="block text-xl font-semibold   py-6 bg-blue-500 hover:bg-white   border border-red-600 p-2 " key={category.id}> {category.name} </Link>)
             }
+               </div>
         </div>
     );
 };

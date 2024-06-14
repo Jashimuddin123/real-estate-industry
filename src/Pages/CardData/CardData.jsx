@@ -3,7 +3,7 @@ const CardData = ({ data }) => {
     console.log(data);
     return (
       <div>
-        <div className="card w-80 bg-base-100 shadow-xl">
+        <div className="card w-96 bg-base-100 shadow-xl">
           <figure>
             <img className="w-80 h-72"
               src= {image}

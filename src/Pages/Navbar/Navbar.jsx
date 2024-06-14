@@ -1,6 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const {logOut, user} = useContext(AuthContext)
+  console.log(user);
   const navLinks = (
     <>
       <li className="mr-2">
@@ -55,9 +59,35 @@ const Navbar = () => {
         }
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
-      </div>
+      
+      {/* conditional */}
+
+      {
+        user?.email ? <div className="dropdown dropdown-end">
+          <label tabIndex={0} className="btn btn-ghost  btn-circle avatar">
+                
+                <div className="w-10 rounded-full">
+                  <img src="https://lh3.googleusercontent.com/a/ACg8ocJc7wKqPMCQLn6jwrRnztkwnqj9U3Y15M6EhPDYm392fM0SLNpK=s576-c-no" alt="" />
+                </div>
+          </label>
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+               
+               <li>
+                <button className="btn btn-sm btn-ghost">
+                  ADNAN
+                </button>
+               </li>
+               <li>
+                <button onClick={logOut} 
+                 className="btn btn-sm btn-ghost">
+                  Logout
+                </button>
+               </li>
+          </ul>
+          
+
+        </div> :   <Link to="/login"> <button className="btn btn-ghost">Login</button> </Link>
+      }
     </div>
   );
 };

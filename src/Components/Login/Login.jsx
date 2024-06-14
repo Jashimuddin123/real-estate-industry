@@ -3,17 +3,28 @@ import { useForm } from "react-hook-form";
 // import { useContext } from "react";
 // import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import {  useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
+
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser,githubLogin, googleLogin } = useContext(AuthContext);
+  
+  // const {} = createContext(AuthContext)
+
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = data => {
     const { email, password } = data;
-    signInUser(email, password);
+    signInUser(email, password)
+    .then(result=>{
+         console.log(result.user);
+    })
+    .catch(error=>{
+        console.log(error);
+    })
+    console.log('this is login ', signInUser);
     // console.log('log i data', data);
   }
 
@@ -49,6 +60,13 @@ const Login = () => {
             If you do not register? please <Link className="text-blue-800 underline font-semibold" to="/register">Register</Link>
           </p>
         </form>
+        {/* social btn login */}
+        <div className="  mx-auto w-96">
+          {/* github login */}
+          <button className=" px-6  py-2 bg-blue-700 text-white rounded mx-auto" 
+          onClick={()=>githubLogin()}>Github</button>
+          <button onClick={()=>googleLogin()} className="px-6 py-2 ">Goggle</button>
+        </div>
       </div>
     </div>
   );
