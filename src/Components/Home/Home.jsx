@@ -10,15 +10,15 @@ const Home = () => {
         <div>
             
            <Header></Header>
-            <div className="grid grid-cols-1 md:grid-cols-3  gap-6 border">
+            <div className="grid grid-cols-1 md:grid-cols-4  gap-6 border">
               <div className="borer border-pink-400 min-h-screen">
             <LeftSideNavbar></LeftSideNavbar>
               </div>
 
-            <div className="border border-blue-950 col-span-2 min-h-screen">
+            <div className="border border-blue-950 col-span-3 min-h-screen">
                 
 
-                 <div className="grid grid-cols-1 md:grid-cols-2">
+                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                     {
                         data.map(singleData=><CardData
                         key={singleData.id}
@@ -28,14 +28,7 @@ const Home = () => {
                         </CardData>)
                     }
                  </div>
-                     {/* <div className="grid grid-cols-1 md:grid-cols-2">
-                     {
-                    data.map(singleData =><CardData 
-                    key={singleData.id}
-                    data={singleData}
-                    ></CardData>)
-                 }
-                     </div> */}
+            
             </div>
             
             

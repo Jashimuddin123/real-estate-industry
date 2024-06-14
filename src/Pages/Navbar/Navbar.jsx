@@ -13,12 +13,12 @@ const Navbar = () => {
       <li className="mr-2">
         <NavLink>Update Profile</NavLink>
       </li>
-      <li className="mr-2">
+      {/* <li className="mr-2">
         <NavLink to="/login">Login</NavLink>
-      </li>
-      <li className="mr-2">
+      </li> */}
+      {/* <li className="mr-2">
         <NavLink to="/register">Register</NavLink>
-      </li>
+      </li> */}
     </>
   );
 
@@ -58,9 +58,7 @@ const Navbar = () => {
             navLinks
         }
         </ul>
-      </div>
-      
-      {/* conditional */}
+            {/* conditional */}
 
       {
         user?.email ? <div className="dropdown dropdown-end">
@@ -88,6 +86,9 @@ const Navbar = () => {
 
         </div> :   <Link to="/login"> <button className="btn btn-ghost">Login</button> </Link>
       }
+      </div>
+      
+  
     </div>
   );
 };

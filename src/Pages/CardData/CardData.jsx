@@ -3,9 +3,9 @@ const CardData = ({ data }) => {
     console.log(data);
     return (
       <div>
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card  bg-base-100 shadow-xl">
           <figure>
-            <img className="w-80 h-72"
+            <img className="w-72 h-52"
               src= {image}
               alt="Shoes"
             />
@@ -22,7 +22,7 @@ const CardData = ({ data }) => {
                <p>{price}</p>
                <p>{area}</p>
                </div>
-            <button className="btn btn-primary">Property</button>
+            <button className="btn btn-primary"> View Property</button>
           
           </div>
         </div>

@@ -8,6 +8,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Login = () => {
+
   const { signInUser,githubLogin, googleLogin } = useContext(AuthContext);
   
   // const {} = createContext(AuthContext)
