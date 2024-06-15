@@ -2,13 +2,13 @@
 import { useForm } from "react-hook-form";
 // import { useContext } from "react";
 // import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {  useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Login = () => {
-
+  console.log('location in the loh', location);
   const { signInUser,githubLogin, googleLogin } = useContext(AuthContext);
   
   // const {} = createContext(AuthContext)
@@ -21,6 +21,7 @@ const Login = () => {
     signInUser(email, password)
     .then(result=>{
          console.log(result.user);
+        //  navigate after login
     })
     .catch(error=>{
         console.log(error);

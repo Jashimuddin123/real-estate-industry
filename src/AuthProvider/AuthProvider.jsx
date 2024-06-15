@@ -12,19 +12,23 @@ export const AuthContext = createContext(null)
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
+    // const [loading, setLoading] = useState(true)
    console.log(user);
   // Create user function
   const createUser = (email, password) =>{
+    // setLoading(true)
     return  createUserWithEmailAndPassword(auth, email, password)
  };
 
     // sign in user
     const signInUser = (email, password) =>{
+        // setLoading(true)
         return  signInWithEmailAndPassword(auth, email, password)
        }
 
 //  logut 
 const logOut = () =>{
+    // setLoading(true)
     setUser(null)
     signOut(auth)
 }
@@ -32,10 +36,12 @@ const logOut = () =>{
 
     //    social github login
     const githubLogin = () =>{
+        // setLoading(true)
         return signInWithPopup(auth, githubProvider)
     }
     //  googleLogin
    const googleLogin = () =>{
+    // setLoading(true)
     console.log('this 9is  gogleprovider');
     return signInWithPopup(auth, googleProvider)
      }
@@ -43,12 +49,15 @@ const logOut = () =>{
     // Observer
     useEffect(()=>{
             
-        onAuthStateChanged(auth, (user) => {
+        const unSubscribe= onAuthStateChanged(auth, (user) => {
             if (user) {
                   setUser(user)
+                //   setLoading(false)
             }
           });
-
+          return() =>{
+            unSubscribe()
+          }
     },[])
 
     // received value
@@ -58,7 +67,8 @@ const logOut = () =>{
       googleLogin,
       githubLogin,
       logOut,
-      user
+      user,
+    //   loading
     }
     return (
         <AuthContext.Provider value={authInfo}>

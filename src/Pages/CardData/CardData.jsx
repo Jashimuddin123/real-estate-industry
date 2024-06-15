@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const CardData = ({ data }) => {
-    const { estate_title,price, area, image, segment_name, description } = data;
-    console.log(data);
+    const { estate_title,price, area, image, segment_name, description, id } = data;
+
     return (
       <div>
         <div className="card  bg-base-100 shadow-xl">
@@ -22,7 +24,7 @@ const CardData = ({ data }) => {
                <p>{price}</p>
                <p>{area}</p>
                </div>
-            <button className="btn btn-primary"> View Property</button>
+           <Link to={`/property/${id}`}><button className="btn btn-primary"> View Property</button></Link>
           
           </div>
         </div>
