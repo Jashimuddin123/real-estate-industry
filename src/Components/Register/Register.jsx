@@ -34,10 +34,11 @@ const Register = () => {
                             // name="name"
                             placeholder="Write Your Name"
                             className="input input-bordered w-full mt-2"
+                            
                             {...register("name", { required: true })}
                         />
                         {/* errors will return when field validation fails */}
-                        {errors.name && <span>This field is required</span>}
+                        {errors.name && <span className="text-red-500">This field is required</span>}
                     </div>
                     <div>
                         <label className="text-xl font-semibold" htmlFor="photo">Photo Url</label> <br />
@@ -59,7 +60,7 @@ const Register = () => {
                             {...register("email", { required: true })}
                         />
                         {/* errors will return when field validation fails */}
-                        {errors.email && <span>This field is required</span>}
+                        {errors.email && <span className="text-red-500">This field is required</span>}
                     </div>
                     <div>
                         <label className="text-xl font-semibold" htmlFor="password">Password</label> <br />
@@ -70,7 +71,7 @@ const Register = () => {
                             className="input input-bordered w-full mt-2"
                             {...register("password", { required: true })}
                         />
-                        {errors.password && <span>This field is required</span>}
+                        {errors.password && <span className="text-red-500">This field is required</span>}
                     </div>
                     <button className="bg-amber-900 text-white rounded py-2 w-full mt-4">Register</button>
                     <p className="my-4">Already Have an Account? Please <Link className="text-blue-800 underline font-semibold" to="/login">Login</Link></p>

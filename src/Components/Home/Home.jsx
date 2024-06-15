@@ -3,6 +3,7 @@ import Header from "../../Pages/Header/Header";
 import LeftSideNavbar from "../../Pages/LeftSideNavbar/LeftSideNavbar";
 import CardData from "../../Pages/CardData/CardData";
 import BannerSlider from "../../Pages/BannerSlider/BannerSlider";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
     const data = useLoaderData()
@@ -36,7 +37,7 @@ const Home = () => {
             
             </div> 
   
-
+      {/* <Footer></Footer> */}
         </div>
     );
 };

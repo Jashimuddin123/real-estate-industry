@@ -48,7 +48,8 @@ const Login = () => {
   return (
     <div>
       <div>
-        <form onSubmit={handleSubmit(onSubmit)} className="lg:w-2/4 md:w-2/4 mx-auto shadow-2xl p-10">
+    <div className="lg:w-2/4 md:w-2/4 mx-auto shadow-2xl p-10 mt-12">
+    <form onSubmit={handleSubmit(onSubmit)} >
           <div>
             <label className="text-xl font-semibold" htmlFor="email">Email</label> <br />
             <input
@@ -72,15 +73,17 @@ const Login = () => {
             {errors.password && <span>This field is required</span>}
           </div>
           <button className="bg-blue-700 text-white rounded py-2 w-full mt-4">Login</button>
-          <p className="my-4">
+          <p className="my-4 text-lg ">
             If you do not register? please <Link className="text-blue-800 underline font-semibold" to="/register">Register</Link>
           </p>
         </form>
-        {/* social btn login */}
-        <div className="mx-auto w-96">
+         {/* social btn login */}
+        <div className="flex w-96">
           <button className="px-6 py-2 bg-blue-700 text-white rounded mx-auto" onClick={handleGithubLogin}>Github</button>
-          <button className="px-6 py-2" onClick={handleGoogleLogin}>Google</button>
+          <button className="px-6 py-2 bg-red-800 rounded text-white" onClick={handleGoogleLogin}>Google</button>
         </div>
+    </div>
+        
       </div>
     </div>
   );
