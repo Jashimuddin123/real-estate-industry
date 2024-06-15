@@ -11,11 +11,11 @@ const LeftSideNav = () => {
         .then(data=> setCategory(data))
     },[])
     return (
-        <div>
-            <h1 className="text-3xl font-bold ml-4 underline text-center">All Categories{category.length}</h1>
-               <div className=" text-start">
+        <div className="ml-6">
+            {/* <h1 className="text-3xl font-bold ml-4 underline text-center">All Categories</h1> */}
+               <div className=" text-center  text-3xl font-bold ">
                {
-                category.map(category=> <Link className="block text-xl font-semibold   py-6 bg-blue-500 hover:bg-white   border border-red-600 p-2 " key={category.id}> {category.name} </Link>)
+                category.map(category=> <Link className="block  font-semibold  py-4   bg-black text-white text-2xl hover:bg-green-800 px-10 mt-2    " key={category.id}> {category.name} </Link>)
             }
                </div>
         </div>

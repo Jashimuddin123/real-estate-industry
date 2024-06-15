@@ -14,28 +14,28 @@ import ViewProperty from './Components/ViewProperty/ViewProperty';
 import PrivateRoute from './Components/PrivetRoute/PrivateRoute';
 import NotFound from './NotFound/NotFound';
 
-
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
-    errorElement:<NotFound></NotFound>,
+    errorElement: <NotFound />,
     children: [
       {
         path: '/',
         element: <Home />,
-        loader: () => fetch('./data.json').then(res => res.json()),
+        loader: () => fetch('/data.json').then(res => res.json()),
       },
       {
         path: '/property/:id',
-        element: (
-          <PrivateRoute>
-            <ViewProperty />
-          </PrivateRoute>
-        ),
+        element: <PrivateRoute><ViewProperty /></PrivateRoute>,
         loader: async ({ params }) => {
-          const response = await fetch(`/data.json/${params.id}`);
-          return response.json();
+          const response = await fetch('/data.json');
+          const properties = await response.json();
+          const property = properties.find(p => p.id === parseInt(params.id));
+          if (!property) {
+            throw new Response("Property not found", { status: 404 });
+          }
+          return property;
         },
       },
       {

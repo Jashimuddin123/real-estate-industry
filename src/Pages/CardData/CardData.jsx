@@ -5,9 +5,9 @@ const CardData = ({ data }) => {
 
     return (
       <div>
-        <div className="card  bg-base-100 shadow-xl">
+        <div className="card   text-center bg-slate-100 shadow-xl hover:bg-lime-500 border border-black ">
           <figure>
-            <img className="w-72 h-52"
+            <img className="w-72 mt-6 h-52"
               src= {image}
               alt="Shoes"
             />

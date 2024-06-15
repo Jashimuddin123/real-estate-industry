@@ -18,22 +18,22 @@ const BannerSlider = () => {
              // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
-      slidesPerView={2}
+      slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
     >
       <SwiperSlide>
-        <img src="images/slider1.png.jpg" alt=""style={{width: "100", height:"100vh"}}  />
+        <img className=' w-9/12 mt-12  mx-auto rounded mb-6' src="images/slider2.png.jpg" alt=""  />
       </SwiperSlide>
       <SwiperSlide>
-      <img src="images/slider2.png.jpg" alt=""  style={{width: "100", height:"100vh"}} />
+      <img className=' w-9/12 mt-12  mx-auto rounded' src="images/slider3.png.jpg" alt=""   />
       </SwiperSlide>
       <SwiperSlide>
-      <img src="images/slider3.png.jpg" alt="" style={{width: "100", height:"100vh"}} />
+      <img className=' w-9/12 mt-12 mx-auto rounded' src="images/slider1.png.jpg" alt="" />
       </SwiperSlide>
       <SwiperSlide>
-      <img src="images/slider4.png.jpg" alt="" style={{width: "100", height:"100vh"}} />
+      <img className=' w-9/12 mt-12 mx-auto rounded' src="images/slider4.png.jpg" alt=""/>
       </SwiperSlide>
       ...
     </Swiper>

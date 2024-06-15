@@ -1,34 +1,49 @@
-// import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-// import { useContext } from "react";
-// import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import {  useContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
-
 const Login = () => {
-  console.log('location in the loh', location);
-  const { signInUser,githubLogin, googleLogin } = useContext(AuthContext);
-  
-  // const {} = createContext(AuthContext)
-
-
+  const { signInUser, githubLogin, googleLogin } = useContext(AuthContext);
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
 
   const onSubmit = data => {
     const { email, password } = data;
     signInUser(email, password)
-    .then(result=>{
-         console.log(result.user);
-        //  navigate after login
-    })
-    .catch(error=>{
+      .then(result => {
+        console.log(result.user);
+        navigate(from, { replace: true });
+      })
+      .catch(error => {
         console.log(error);
-    })
-    console.log('this is login ', signInUser);
-    // console.log('log i data', data);
-  }
+      });
+  };
+
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then(result => {
+        console.log(result.user);
+        navigate(from, { replace: true });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then(result => {
+        console.log(result.user);
+        navigate(from, { replace: true });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -43,7 +58,6 @@ const Login = () => {
               className="input input-bordered w-full mt-2"
               {...register("email", { required: true })}
             />
-            {/* errors will return when field validation fails */}
             {errors.email && <span>This field is required</span>}
           </div>
           <div>
@@ -63,11 +77,9 @@ const Login = () => {
           </p>
         </form>
         {/* social btn login */}
-        <div className="  mx-auto w-96">
-          {/* github login */}
-          <button className=" px-6  py-2 bg-blue-700 text-white rounded mx-auto" 
-          onClick={()=>githubLogin()}>Github</button>
-          <button onClick={()=>googleLogin()} className="px-6 py-2 ">Goggle</button>
+        <div className="mx-auto w-96">
+          <button className="px-6 py-2 bg-blue-700 text-white rounded mx-auto" onClick={handleGithubLogin}>Github</button>
+          <button className="px-6 py-2" onClick={handleGoogleLogin}>Google</button>
         </div>
       </div>
     </div>

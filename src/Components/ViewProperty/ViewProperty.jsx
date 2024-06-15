@@ -3,16 +3,23 @@ import { useLoaderData } from 'react-router-dom';
 
 const ViewProperty = () => {
   const propertyData = useLoaderData();
+  console.log('this is property',propertyData);
+  const {area, image,description,estate_title, location,facilities,price,segment_name,status,
+  } = propertyData
   return (
-    <div>
-      <h1>Property Details</h1>
-      <div className="card">
-        <h2>{propertyData.title}</h2>
-        <p>{propertyData.description}</p>
-        <p>Price: ${propertyData.price}</p>
-        <img src={propertyData.imageUrl} alt={propertyData.title} />
-        {/* Add more property details as needed */}
-      </div>
+    <div className='max-w-3xl mx-auto text-center' >
+         <img className='w-96 h-80 mx-auto rounded' src={image}/>
+         <p>{segment_name}</p>
+          <h1>{estate_title}</h1>
+          <p>{description}</p>
+          <p>{area}</p>
+          <p>{location}</p>
+          <p>{price}</p>
+          <p>{facilities}</p>
+          <p>{status}</p>
+           <div>
+            
+           </div>
     </div>
   );
 };
