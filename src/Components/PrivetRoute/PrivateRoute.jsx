@@ -8,9 +8,9 @@ const PrivateRoute = ({children}) => {
     const {user} = useContext(AuthContext)
 
     if(!user){
-        return <Navigate to='/login' state={location.pathname}></Navigate>
+        return <Navigate to='/login'></Navigate>
     }
-   if(user){
+   
     return (
         <div>
             {children}
@@ -19,7 +19,6 @@ const PrivateRoute = ({children}) => {
    }
    
     
-   return <Navigate state={location.pathname} to="/login"></Navigate>
-};
+//    return <Navigate state={location.pathname} to="/login"></Navigate>
 
 export default PrivateRoute;

@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Header from "../../Pages/Header/Header";
 import LeftSideNavbar from "../../Pages/LeftSideNavbar/LeftSideNavbar";
 import CardData from "../../Pages/CardData/CardData";
+import BannerSlider from "../../Pages/BannerSlider/BannerSlider";
 
 const Home = () => {
     const data = useLoaderData()
@@ -10,6 +11,7 @@ const Home = () => {
         <div>
             
            <Header></Header>
+           <BannerSlider></BannerSlider>
             <div className="grid grid-cols-1 md:grid-cols-4  gap-6 border">
               <div className="borer border-pink-400 min-h-screen">
             <LeftSideNavbar></LeftSideNavbar>
