@@ -13,6 +13,8 @@ import Register from './Components/Register/Register';
 import ViewProperty from './Components/ViewProperty/ViewProperty';
 import PrivateRoute from './Components/PrivetRoute/PrivateRoute';
 import NotFound from './NotFound/NotFound';
+import { HelmetProvider } from 'react-helmet-async';
+
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/property/:id',
-        element: <PrivateRoute><ViewProperty /></PrivateRoute>,
+        element: <PrivateRoute>
+          <ViewProperty/> 
+       </PrivateRoute>,
         loader: async ({ params }) => {
           const response = await fetch('/data.json');
           const properties = await response.json();
@@ -42,6 +46,7 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login />,
       },
+     
       {
         path: '/register',
         element: <Register />,
@@ -53,7 +58,10 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
+      <HelmetProvider>
       <RouterProvider router={router} />
+      </HelmetProvider>
+    
     </AuthProvider>
   </React.StrictMode>
 );

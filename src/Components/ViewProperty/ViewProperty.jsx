@@ -7,18 +7,19 @@ const ViewProperty = () => {
   const {area, image,description,estate_title, location,facilities,price,segment_name,status,
   } = propertyData
   return (
-    <div className='max-w-3xl mx-auto text-center' >
+    <div className='max-w-xl  mx-auto text-center border border-red-500 shadow-2xl mt-6 py-4 px-10' >
          <img className='w-96 h-80 mx-auto rounded' src={image}/>
-         <p>{segment_name}</p>
-          <h1>{estate_title}</h1>
+         <p className='text-gray-600 text-lg'>{segment_name}</p>
+          <h1 className='text-xl font-bold'>{estate_title}</h1>
           <p>{description}</p>
-          <p>{area}</p>
-          <p>{location}</p>
-          <p>{price}</p>
           <p>{facilities}</p>
-          <p>{status}</p>
+          <p>{area}</p>
+          <p className='text-lg text-gray-700'>Price: {price}</p>
+        
+          <p className='font-bold'>{status}</p>
+          <p>{location}</p>
            <div>
-            
+        
            </div>
     </div>
   );

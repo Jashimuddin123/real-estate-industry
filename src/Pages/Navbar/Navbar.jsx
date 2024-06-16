@@ -13,6 +13,9 @@ const Navbar = () => {
       <li className="mr-2">
         <NavLink>Update Profile</NavLink>
       </li>
+      {/* <li className="mr-2">
+        <NavLink to="/aboutUs">About Us</NavLink>
+      </li> */}
 
     </>
   );

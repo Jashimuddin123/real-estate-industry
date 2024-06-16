@@ -6,15 +6,15 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC2smrHU7ya3beaoRuvk6cMmEVLwP_i_B8",
-  authDomain: "real-estate-industry.firebaseapp.com",
-  projectId: "real-estate-industry",
-  storageBucket: "real-estate-industry.appspot.com",
-  messagingSenderId: "331684558535",
-  appId: "1:331684558535:web:9a226e6dbf2627184670e2"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app)
-export default auth
+const auth = getAuth(app);
+export default auth;

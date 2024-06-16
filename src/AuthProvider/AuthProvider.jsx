@@ -1,11 +1,14 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword,
+     onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, GithubAuthProvider, 
+     FacebookAuthProvider} from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/Firebase";
-import { GithubAuthProvider } from "firebase/auth";
+// import { GithubAuthProvider } from "firebase/auth";
 
 // social login auth provider
 const githubProvider = new GithubAuthProvider()
 const googleProvider = new GoogleAuthProvider()
+const facebookProvider = new FacebookAuthProvider()
 
 // create contex
 export const AuthContext = createContext(null)
@@ -32,17 +35,21 @@ const logOut = () =>{
     setUser(null)
     signOut(auth)
 }
-         
+        //  facebook 
+        const facebookLogin = () =>{
+            return signInWithPopup(auth, facebookProvider)
+        }
 
     //    social github login
     const githubLogin = () =>{
         setLoading(true)
+        console.log(githubLogin);
         return signInWithPopup(auth, githubProvider)
     }
     //  googleLogin
    const googleLogin = () =>{
     setLoading(true)
-    console.log('this 9is  gogleprovider');
+  
     return signInWithPopup(auth, googleProvider)
      }
 
@@ -65,6 +72,7 @@ const logOut = () =>{
       createUser,
       signInUser,
       googleLogin,
+      facebookLogin,
       githubLogin,
       logOut,
       user,
